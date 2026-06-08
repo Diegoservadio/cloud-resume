@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diego Servadio — Cloud & Network Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0e0e0e;--surface:#141414;--surface2:#1a1a1a;
+  --ink:#f0ece4;--muted:#6a6560;--soft:#a09890;
+  --red:#d64a3a;--border:#2a2a2a;
+  --serif:'Fraunces',serif;--mono:'Fira Code',monospace;
+}
+html,body{min-height:100vh;background:var(--bg)}
+body{font-family:var(--serif);color:var(--ink);padding:2rem 1rem}
+.page{max-width:740px;margin:0 auto;background:var(--surface);border:1px solid var(--border)}
+.hdr{padding:2.5rem 3rem 2rem;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end}
+.name{font-size:44px;font-weight:300;letter-spacing:-.03em;line-height:1;font-style:italic;color:var(--ink)}
+.name em{font-style:normal;font-weight:600;color:var(--red)}
+.role{font-family:var(--mono);font-size:10px;font-weight:300;color:var(--muted);letter-spacing:.18em;text-transform:uppercase;margin-top:10px}
+.contacts{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+.contact{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none;transition:color .2s}
+.contact:hover{color:var(--red)}
+.body{display:grid;grid-template-columns:1fr 200px}
+.main{padding:2rem 2rem 2rem 3rem;border-right:1px solid var(--border)}
+.side{padding:2rem 1.5rem}
+.sec{margin-bottom:2.2rem}
+.sec:last-child{margin-bottom:0}
+.sec-title{font-family:var(--mono);font-size:9px;font-weight:400;color:var(--red);letter-spacing:.22em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.sec-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.exp{margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.exp:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.exp-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:2px}
+.exp-role{font-size:15px;font-weight:600;color:var(--ink)}
+.exp-date{font-family:var(--mono);font-size:9px;color:var(--muted);white-space:nowrap}
+.exp-co{font-family:var(--mono);font-size:10px;color:var(--muted);margin-bottom:10px}
+.bullets{list-style:none;display:flex;flex-direction:column;gap:5px}
+.bullets li{font-size:12px;font-weight:300;color:var(--soft);line-height:1.6;padding-left:16px;position:relative}
+.bullets li::before{content:'›';position:absolute;left:0;color:var(--red)}
+.proj{margin-bottom:10px;padding:12px 14px;border:1px solid var(--border);border-left:2px solid var(--red);background:var(--surface2)}
+.proj-name{font-size:13px;font-weight:600;color:var(--ink)}
+.proj-desc{font-size:11px;font-weight:300;color:var(--soft);margin-top:4px;line-height:1.6;font-family:var(--mono)}
+.proj-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.proj-tag{font-family:var(--mono);font-size:9px;color:var(--muted);border:1px solid var(--border);padding:2px 6px}
+.proj-link{font-family:var(--mono);font-size:9px;color:var(--red);text-decoration:none;margin-top:6px;display:inline-block}
+.edu-item{margin-bottom:14px}
+.edu-name{font-size:13px;font-weight:600;color:var(--ink)}
+.edu-sub{font-family:var(--mono);font-size:10px;font-weight:300;color:var(--soft);margin-top:3px;line-height:1.5}
+.edu-date{font-family:var(--mono);font-size:9px;color:var(--red);margin-top:4px}
+.skill-group{margin-bottom:14px}
+.sg-title{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px}
+.skill-list{display:flex;flex-direction:column;gap:3px}
+.skill-item{font-family:var(--mono);font-size:10px;font-weight:300;color:var(--soft);display:flex;align-items:center;gap:6px}
+.skill-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--border);flex-shrink:0}
+.skill-item.hot{color:var(--ink)}
+.skill-item.hot::before{background:var(--red)}
+.footer{border-top:1px solid var(--border);padding:10px 3rem;display:flex;justify-content:space-between;align-items:center;background:var(--surface2)}
+.footer-url{font-family:var(--mono);font-size:9px;color:var(--muted)}
+.counter{font-family:var(--mono);font-size:9px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.c-dot{width:5px;height:5px;border-radius:50%;background:var(--red);animation:p 2s infinite}
+@keyframes p{0%,100%{opacity:1}50%{opacity:.2}}
+.c-num{color:var(--red)}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="hdr">
+    <div>
+      <div class="name">Diego <em>Servadio</em></div>
+      <div class="role">Cloud &amp; Network Engineer · Milano</div>
+    </div>
+    <div class="contacts">
+      <a class="contact" href="https://linkedin.com/in/diegoservadio" target="_blank">linkedin.com/in/diegoservadio</a>
+      <a class="contact" href="https://github.com/Diegoservadio" target="_blank">github.com/Diegoservadio</a>
+      <span class="contact">Milano, Italia</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="main">
+      <div class="sec">
+        <div class="sec-title">Esperienza</div>
+        <div class="exp">
+          <div class="exp-top">
+            <div class="exp-role">Cloud &amp; Network Administrator</div>
+            <div class="exp-date">2024 — oggi</div>
+          </div>
+          <div class="exp-co">Istituto Marangoni · Stage · Milano</div>
+          <ul class="bullets">
+            <li>Gestione infrastruttura cloud Azure e network on-premise</li>
+            <li>Backup e disaster recovery con Veeam Backup &amp; Replication</li>
+            <li>Configurazione e monitoring reti Cisco Meraki e Cisco IOS</li>
+            <li>Automazione tramite PowerShell e scripting Linux</li>
+            <li>Gestione ambienti containerizzati con Docker</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="sec-title">Progetti</div>
+        <div class="proj">
+          <div class="proj-name">NetScope — Cisco Topology Visualizer</div>
+          <div class="proj-desc">Parsa show running-config Cisco e genera grafi di topologia interattivi via AI. Deploy su Azure Static Web Apps + Functions.</div>
+          <div class="proj-tags"><span class="proj-tag">Azure</span><span class="proj-tag">Python</span><span class="proj-tag">Cytoscape.js</span><span class="proj-tag">Anthropic API</span></div>
+          <a class="proj-link" href="https://github.com/Diegoservadio/netscope" target="_blank">→ github.com/Diegoservadio/netscope</a>
+        </div>
+        <div class="proj">
+          <div class="proj-name">IronVault — Disaster Recovery su AWS</div>
+          <div class="proj-desc">Infrastruttura DR su AWS con Windows Server, Windows Client e Ubuntu Server. Monitoring con Prometheus + Grafana. VM di failover su cloud.</div>
+          <div class="proj-tags"><span class="proj-tag">AWS</span><span class="proj-tag">Windows Server</span><span class="proj-tag">Prometheus</span><span class="proj-tag">Grafana</span><span class="proj-tag">Ubuntu</span></div>
+          <a class="proj-link" href="https://github.com/Diegoservadio" target="_blank">→ github.com/Diegoservadio</a>
+        </div>
+        <div class="proj">
+          <div class="proj-name">Multi-sede-rete-aziendale</div>
+          <div class="proj-desc">Simulazione enterprise multi-sito in Packet Tracer: VLANs, OSPF, DHCP relay, ACLs, WiFi. Troubleshooting documentato.</div>
+          <div class="proj-tags"><span class="proj-tag">Cisco IOS</span><span class="proj-tag">OSPF</span><span class="proj-tag">VLANs</span><span class="proj-tag">Packet Tracer</span></div>
+          <a class="proj-link" href="https://github.com/Diegoservadio/Multi-sede-rete-aziendale" target="_blank">→ github.com/Diegoservadio/Multi-sede-rete-aziendale</a>
+        </div>
+        <div class="proj">
+          <div class="proj-name">Home Lab — SVI &amp; VLAN</div>
+          <div class="proj-desc">Lab con switch layer 3, SVI routing e segmentazione VLAN su hardware reale.</div>
+          <div class="proj-tags"><span class="proj-tag">Cisco</span><span class="proj-tag">L3 switching</span><span class="proj-tag">VLAN</span></div>
+          <a class="proj-link" href="https://github.com/Diegoservadio" target="_blank">→ github.com/Diegoservadio</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="sec">
+        <div class="sec-title">Formazione</div>
+        <div class="edu-item">
+          <div class="edu-name">ITS Tech Talent Factory</div>
+          <div class="edu-sub">Cloud Engineer &amp; Security Administrator</div>
+          <div class="edu-date">2023 — 2025</div>
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="sec-title">Skill</div>
+        <div class="skill-group">
+          <div class="sg-title">Cloud</div>
+          <div class="skill-list">
+            <span class="skill-item hot">Azure</span>
+            <span class="skill-item hot">Azure Functions</span>
+            <span class="skill-item hot">Static Web Apps</span>
+            <span class="skill-item">AWS</span>
+            <span class="skill-item">Docker</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-title">Network</div>
+          <div class="skill-list">
+            <span class="skill-item hot">Cisco IOS</span>
+            <span class="skill-item hot">Cisco Meraki</span>
+            <span class="skill-item">Hamina</span>
+            <span class="skill-item">OSPF / VLANs</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-title">Tools</div>
+          <div class="skill-list">
+            <span class="skill-item hot">PowerShell</span>
+            <span class="skill-item">Linux</span>
+            <span class="skill-item">Git / GitHub</span>
+            <span class="skill-item">Veeam</span>
+            <span class="skill-item">Prometheus</span>
+            <span class="skill-item">Grafana</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-title">Lingue</div>
+          <div class="skill-list">
+            <span class="skill-item hot">Italiano — madrelingua</span>
+            <span class="skill-item">Inglese — B2</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-url">diego-servadio.azurestaticapps.net</div>
+    <div class="counter">
+      <div class="c-dot"></div>
+      visite: <span class="c-num" id="cnt">—</span>
+    </div>
+  </div>
+</div>
+
+<script>
+// Questo script chiamerà /api/counter quando sarà deployato su Azure
+// Per ora mostra un placeholder
+async function loadCount() {
+  try {
+    const res = await fetch('/api/counter');
+    const data = await res.json();
+    document.getElementById('cnt').textContent = data.count;
+  } catch {
+    document.getElementById('cnt').textContent = '—';
+  }
+}
+loadCount();
+</script>
+</body>
+</html>
