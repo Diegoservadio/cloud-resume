@@ -8,20 +8,9 @@
 
 ## Architettura
 
-```
-Browser
-  │  HTTP GET
-  ▼
-Azure Static Web Apps      ← serve index.html + CSS
-  │  fetch /api/counter
-  ▼
-Azure Function (Python)    ← legge e incrementa il contatore
-  │  upsert
-  ▼
-Azure Cosmos DB (NoSQL)    ← { "id": "counter", "count": N }
-```
+![Architettura Cloud Resume](architecture.png)
 
-Ogni volta che un utente apre il CV, una Azure Function legge il documento su Cosmos DB, incrementa il campo `count` e restituisce il valore aggiornato. Il frontend aggiorna il contatore in pagina senza ricaricare.
+Ogni volta che un utente apre il CV, una Azure Function legge il documento su Cosmos DB, incrementa il campo `count` e restituisce il valore aggiornato in pagina.
 
 ---
 
